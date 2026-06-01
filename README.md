@@ -4,6 +4,15 @@ This script generates the four required `.RData` annotation files (`exon_anno`, 
 
 It specifically connects to the Ensembl Time Machine Archive (November 2020, Release 104) to guarantee the `rn6` build rather than the newer `rn7` build.
 
+You can customize the reference genome for your own project requirements. Below is an example of how to connect to a specific Ensembl archive using R:
+
+cat("Connecting to Ensembl Archive (Nov 2020) for Rat rn6...\n")
+rat_mart <- biomaRt::useMart(
+  biomart = "ENSEMBL_MART_ENSEMBL", 
+  dataset = "rnorvegicus_gene_ensembl", 
+  host = "https://nov2020.archive.ensembl.org"
+)
+
 ## ⚠️ The Problems This Script Solves
 
 CustomProDB is a powerful tool, but it suffers from severe "package rot" and was originally designed strictly for human data. If you attempt to run standard `PrepareAnnotationEnsembl()` for rat data on modern versions of R, it will suffer cascading crashes.
