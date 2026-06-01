@@ -1,4 +1,4 @@
-# CustomProDB Rat (rn6) Annotation Generator & Bugfix Patch
+# CustomProDB Annotation Generator & Bugfix Patch
 
 This script generates the four required `.RData` annotation files (`exon_anno`, `ids`, `proseq`, `procodingseq`) needed to run the **CustomProDB** proteomics pipeline using the **Rat (Rnor_6.0 / rn6)** reference genome.
 
